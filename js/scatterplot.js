@@ -88,37 +88,36 @@ d3.csv("data/scatter.csv").then((data3) => {
 
     // on mouseover event, call mouseover function
     svg3.selectAll("circle")
-        .on("mouseover", mouseover)
-        .on("mouseout", mouseout)
+    .on("mouseover", mouseover3)
+    .on("mouseout", mouseout3)
 
 });
 
 
-//###############################################################
-// Adding interaction  
-//###############################################################
+/* 
 
-// mouseover event handler
+  Tooltip Set-up  
 
-const mouseover = function(event, d) {
-    // Given the input event, select the element that the event is happening to; the this keyword refers to the event parameter
-    let point = d3.select(this);
-    // Remove myFirstPlot class
-    point.classed("myFirstPlot", false);
-    // Add class highighted
-    point.classed("highlighted", true);
+*/
+
+// TODO: What does each line of this code do? 
+// Adds a div to the hard-coded-bar div with attriute id: tooltip2 and class tooltip
+const tooltip3 = d3.select("#csv-scatter") 
+                .append("div") 
+                .attr('id', "tooltip3") 
+                .style("opacity", 0) 
+                .attr("class", "tooltip"); 
+
+// TODO: What does each line of this code do?
+// Creates the mouseover function
+const mouseover3 = function(event, d) {
+  tooltip3.html("Day: " + d.day + "<br> Score: " + d.score + "<br>") 
+          .style("opacity", 1);  
 }
 
-// mouseout event handler
 
-const mouseout = function(event, d) {
-    let point = d3.select(this);
-    point.classed("myFirstPlot", true);
-    point.classed("highlighted", false);
-}
-
-
-
-
+const mouseout3 = function(event, d) { 
+    tooltip3.style("opacity", 0); 
+  }
 
 
