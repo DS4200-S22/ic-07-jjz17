@@ -99,7 +99,7 @@ const mouseover1 = function(event, d) {
 // Creates the mousemove function
 const mousemove1 = function(event, d) {
   tooltip1.style("left", (event.x)+"px") 
-          .style("top", (event.y + yTooltipOffset) +"px"); 
+          .style("top", (event.pageY + yTooltipOffset) +"px"); 
 }
 
 // TODO: What does this code do? 
@@ -217,7 +217,7 @@ const mouseover2 = function(event, d) {
 // Creates the mousemove function
 const mousemove2 = function(event, d) {
   tooltip2.style("left", (event.x)+"px") 
-          .style("top", (event.y + yTooltipOffset) +"px"); 
+          .style("top", (event.pageY + yTooltipOffset) +"px"); 
 }
 
 // TODO: What does this code do? 

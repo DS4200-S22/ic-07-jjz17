@@ -90,6 +90,7 @@ d3.csv("data/scatter.csv").then((data3) => {
     svg3.selectAll("circle")
     .on("mouseover", mouseover3)
     .on("mouseout", mouseout3)
+    .on("mousemove", mousemove3)
 
 });
 
@@ -120,4 +121,9 @@ const mouseout3 = function(event, d) {
     tooltip3.style("opacity", 0); 
   }
 
-
+// TODO: What does each line of this code do? 
+// Creates the mousemove function
+const mousemove3 = function(event, d) {
+  tooltip3.style("left", (event.x)+"px") 
+          .style("top", (event.pageY + yTooltipOffset) +"px"); 
+}
